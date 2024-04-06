@@ -2,23 +2,32 @@ function search() {
     var cep = document.getElementById("cep").value;
     var url = `https://brasilapi.com.br/api/cep/v1/${cep}`;
 
-    $.getJSON(url, function(address){
-        showAddress(address);
+    fetch(url)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Not Found');
+            }
 
-        clearError();
-
-    }).fail(() => {
-        showError("Address not found!");
-    })
-};
+            clearError();
+            return response.json();
+        })
+        .then(address => {
+            showAddress(address);
+            clearError()
+        })
+        .catch(error => {
+            showError("Endereço não encontrado");
+        });
+}
 
 function showError(msg) {
-    document.getElementById("error").innerHTML = `<div class='alert alert-danger mt-1' role='alert'>${msg}</div>`;
+    document.getElementById("error").innerHTML = `<div class='alert alert-danger col-2 mt-3' role='alert'>${msg}</div>`;
 }
 
 function clearError() {
     document.getElementById("error").innerHTML = "";
 }
+
 
 function showAddress(address) {
     document.getElementById("street").value = address.street;
@@ -26,3 +35,5 @@ function showAddress(address) {
     document.getElementById("city").value = address.city;
     document.getElementById("state").value = address.state;
 }
+
+
