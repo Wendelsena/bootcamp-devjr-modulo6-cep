@@ -111,4 +111,20 @@ function addNewRow(register) {
     newRow.insertCell().appendChild(stateNode);
 }
 
+function searchClient() {
+    var searchQuery = document.getElementById("searchInput").value.toLowerCase();
+    var foundClient = registers.find(client => {
+        return client.id.toString() === searchQuery || (client.firstName.toLowerCase() + " " + client.lastName.toLowerCase()).includes(searchQuery);
+    });
+
+    if (foundClient) {
+        console.log(`Client found:\nID: ${foundClient.id}\nName: ${foundClient.firstName} ${foundClient.lastName}\nNumber: ${foundClient.number}\nStreet: ${foundClient.street}\nNeighborhood: ${foundClient.neighborhood}\nCity: ${foundClient.city}\nState: ${foundClient.state}`);
+    } else {
+        showError("Client not found");
+    }
+}
+
+
+
+
 
