@@ -1,11 +1,11 @@
 - ## CEP Register
 
 #### Mobile 
-<img align="right" width="300" src="mobile1.jpeg">
-<img width="300" src="mobile2.jpeg">
+<img align="right" width="300" src="mobileCEP1.jpeg">
+<img width="300" src="mobileCEP2.jpeg">
 
 #### Desktop
 
-<img width="600" src="desktop.jpeg">
+<img width="600" src="desktopCEP.jpeg">
 
   
