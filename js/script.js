@@ -23,7 +23,7 @@ function search() {
 }
 
 function showError(msg) {
-    document.getElementById("error").innerHTML = `<div class='alert alert-danger col-2 mt-3' role='alert'>${msg}</div>`;
+    document.getElementById("error").innerHTML = `<div class='alert alert-danger col-sm-4 mt-3' role='alert'>${msg}</div>`;
 }
 
 function clearError() {
@@ -36,6 +36,7 @@ function showAddress(address) {
     document.getElementById("neighborhood").value = address.neighborhood;
     document.getElementById("city").value = address.city;
     document.getElementById("state").value = address.state;
+    document.getElementById("service").value = address.service;
 }
 
 //OnLoad
