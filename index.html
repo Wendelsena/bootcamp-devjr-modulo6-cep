@@ -10,7 +10,7 @@
 
     <!-- NavBar -->
     <header>
-        <nav class="navbar bg-body-tertiary bg-info-subtle shadow">
+        <nav class="navbar bg-body-tertiary bg-info-subtle shadow fixed-top">
             <div class="container-fluid">
                 <a class="navbar-brand">
                     <img src="assets/registro.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top">
@@ -26,22 +26,23 @@
     
     <main>
 
-        <div class="text-center mt-3">
+        <div class="text-center mt-5 p-2">
             <div class="display-5">
                 Register
             </div>
         </div>
         <div class="container shadow rounded m-auto mt-3 p-5 bg-white">
+
             <section>
-                <form>
+                <form id="formRegister">
                     <div class="row">
                         <div class="col-md-6">
                             <label for="inputEmail4" class="form-label">First name:</label>
-                            <input type="email" class="form-control" id="inputFirstName">
+                            <input type="email" class="form-control" id="firstName">
                             </div>
                             <div class="col-md-6">
                             <label type="text" for="inputPassword4" class="form-label">Last name:</label>
-                            <input type="text" class="form-control" id="inputLastName">
+                            <input type="text" class="form-control" id="lastName">
                             </div>
                     </div>
                     <div class="col-2 mt-3">
@@ -52,67 +53,50 @@
                     <!-- Mensagem de erro -->
                     <div id="error"></div>
 
+                      <div class="row mt-5">
+                          <div class="col-md-9">
+                              <label class="form-label" >Street</label>
+                              <input type="text" class="form-control" id="street" disabled>
+                              </div>
+                              <div class="col-md-3">
+                              <label class="form-label">Number</label>
+                              <input type="text" class="form-control" id="number">
+                          </div>
+                      </div>
+                      <div class="row mt-3">
+                          <div class="col-md-6">
+                              <label class="form-label">Neighborhood</label>
+                              <input type="text" class="form-control" id="neighborhood" disabled>
+                              </div>
+                              <div class="col-md-6">
+                              <label class="form-label">City</label>
+                              <input type="text" class="form-control" id="city" disabled>
+                              </div>
+                      </div>
+                      <div class="col-2 mt-3">
+                          <label class="form-label">State</label>
+                          <input type="text" class="form-control" id="state" disabled>
+                      </div>
                 </form>
             </section>
             <section>
-                    <form>
-                        <div class="row mt-5">
-                            <div class="col-md-9">
-                                <label class="form-label" >Street</label>
-                                <input type="text" class="form-control" id="street" disabled>
-                                </div>
-                                <div class="col-md-3">
-                                <label class="form-label">Number</label>
-                                <input type="text" class="form-control" id="Number">
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <label class="form-label">Neighborhood</label>
-                                <input type="text" class="form-control" id="neighborhood" disabled>
-                                </div>
-                                <div class="col-md-6">
-                                <label class="form-label">City</label>
-                                <input type="text" class="form-control" id="city" disabled>
-                                </div>
-                        </div>
-                        <div class="col-2 mt-3">
-                            <label class="form-label">State</label>
-                            <input type="text" class="form-control" id="state" disabled>
-                        </div>
-                    </form>
                     <div class="text-center">
-                        <button type="button" class="btn btn-primary m-4 col-md-2">Save</button>
+                        <button type="button" class="btn btn-primary m-4 col-md-2" onclick="save()">Save</button>
                     </div>
                     <hr>
-                    <table class="table">
+                    <table class="table" id="registerTable">
                         <thead>
                           <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Number</th>
+                            <th scope="col">street</th>
+                            <th scope="col">Neighborhood</th>
+                            <th scope="col">City</th>
+                            <th scope="col">State</th>
                           </tr>
                         </thead>
-                        <tbody>
-                          <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                          </tr>
-                          <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                          </tr>
-                        </tbody>
+                        <tbody></tbody>
                       </table>
                 </div>
             </section>
