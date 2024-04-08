@@ -23,7 +23,7 @@ function search() {
 }
 
 function showError(msg) {
-    document.getElementById("error").innerHTML = `<div class='alert alert-danger col-sm-4 mt-3' role='alert'>${msg}</div>`;
+    document.getElementById("error").innerHTML = `<div class='alert alert-danger col-md-8 mt-3' role='alert'>${msg}</div>`;
 }
 
 function clearError() {
